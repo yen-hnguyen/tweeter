@@ -3,10 +3,6 @@ header {
   width: 100%;
   background-color: #e7eaf6;
   background-image: url("https://www.transparenttextures.com/patterns/polonez-pattern.png");
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-}
-
-header main {
   display: flex;
   flex-direction: column;
   align-items: center;
