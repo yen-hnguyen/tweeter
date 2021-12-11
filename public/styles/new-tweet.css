@@ -1,0 +1,28 @@
+.tweet-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.tweet-form textarea {
+  border: none;
+  border-bottom: 5px solid #545149;
+  white-space: nowrap;
+  resize: none;
+  outline: none;
+  background-color: #f4f1ec;
+}
+
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+  font-family: 'Bungee', cursive;
+}
+
+.form-footer button {
+  background-color: #4056A1;
+  color: #FFFFFF;
+  font-size: 20px;
+  padding: 5px 10px;
+  border: none
+}
