@@ -6,10 +6,12 @@
 .tweet-form textarea {
   border: none;
   border-bottom: 5px solid #545149;
-  white-space: nowrap;
   resize: none;
   outline: none;
   background-color: #f4f1ec;
+  font-size: 20px;
+  height: 80px;
+  padding-top: 10px
 }
 
 .form-footer {
