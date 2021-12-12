@@ -1,4 +1,4 @@
-header {
+.user-profile {
   height: 400px;
   width: 100%;
   background-color: #e7eaf6;
@@ -13,6 +13,6 @@ header {
   height: 190px
 }
 
-header h2 {
+.user-profile h2 {
   margin: 0
 }
