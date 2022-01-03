@@ -6,33 +6,33 @@
  */
 $(document).ready(function() {
   const createTweetElement = function(tweet) {
-    const tweetTime = timeago.format(created_at);
-    let $tweet = `
-  <article class="tweet-container">
-    <header class="tweet-header">
-      <div class="user-info">
-        <img src=${tweet.user.avatars}/>
-        <p>${tweet.user.name}</p>
+    let tweetTime = timeago.format(created_at);
+    let $tweet = $(`
+    <article class="tweet-container">
+      <header class="tweet-header">
+        <div class="user-info">
+          <img src=${tweet.user.avatars}/>
+          <p>${tweet.user.name}</p>
+        </div>
+        <p class="user-id">${tweet.user.handle}</p>
+      </header>
+      <!-- Tweet content -->
+      <div class="tweet-content">
+        <p>${tweet.content.text}</p>
       </div>
-      <p class="user-id">${tweet.user.handle}</p>
-    </header>
-    <!-- Tweet content -->
-    <div class="tweet-content">
-      <p>${tweet.content.text}</p>
-    </div>
-    <!-- Timestamp and icons for tweet -->
-    <footer class="tweet-footer">
-      <div class="timestamp">
-        <p>${tweetTime}</p>
-      </div>
-      <div class="icons">
-        <i class="fas fa-flag"></i>
-        <i class="fas fa-retweet"></i>
-        <i class="fas fa-heart"></i>
-      </div>
-    </footer>
-  </article>
-  `;
+      <!-- Timestamp and icons for tweet -->
+      <footer class="tweet-footer">
+        <div class="timestamp">
+          <p>${tweetTime}</p>
+        </div>
+        <div class="icons">
+          <i class="fas fa-flag"></i>
+          <i class="fas fa-retweet"></i>
+          <i class="fas fa-heart"></i>
+        </div>
+      </footer>
+    </article>
+  `);
     return $tweet;
   };
 
@@ -50,11 +50,25 @@ $(document).ready(function() {
   };
   loadTweets();
 
-  $("#new-tweet-form").submit(function(event) {
+  const formValidation = function() {
+    const $tweetContent = $("#tweet-text").val();
+    if (!$tweetContent.length) {
+      alert("What are you thinking about?");
+      return false;
+    } else if ($tweetContent.length > 140) {
+      alert("Too long!");
+      return false;
+    }
+    return true;
+  };
+
+  $(".tweet-form").submit(function(event) {
     event.preventDefault();
+    if (!formValidation("tweet-text")) return false;
     const formData = $(this).serialize();
-    $.post("/tweets", formData);
+    $.post("/tweets", formData).then(loadTweets);
   });
+
 
 });
 
