@@ -26,6 +26,9 @@
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="scripts/composer-char-counter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+      integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
   </head>
@@ -67,31 +70,7 @@
       </section>
 
       <!-- User's posted tweet show up here -->
-      <section class="tweet-container">
-        <article>
-          <!-- Tweet header - user's name and id -->
-          <header class=tweet-header>
-            <p>Newton</p>
-            <p class="user-id">
-              @Sirlaac
-            </p>
-          </header>
-          <!-- Tweet content -->
-          <div class="tweet-content">
-            <p>If I have been further it is by standing on the shoulder of giants</p>
-          </div>
-          <!-- Timestamp and icons for tweet -->
-          <footer class="tweet-footer">
-            <div class="timestamp">
-              <p>10 days ago</p>
-            </div>
-            <div class="icons">
-              <i class="fas fa-flag"></i>
-              <i class="fas fa-retweet"></i>
-              <i class="fas fa-heart"></i>
-            </div>
-          </footer>
-        </article>
+      <section id="tweets-container">
       </section>
     </main>
   </body>
