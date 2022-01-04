@@ -6,7 +6,7 @@
  */
 $(document).ready(function() {
   const createTweetElement = function(tweet) {
-    let tweetTime = timeago.format(created_at);
+    let tweetTime = timeago.format(tweet.created_at);
     let $tweet = $(`
     <article class="tweet-container">
       <header class="tweet-header">
@@ -36,10 +36,11 @@ $(document).ready(function() {
     return $tweet;
   };
 
+
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {
       let $tweet = createTweetElement(tweet);
-      $('#tweets-container').append($tweet);
+      $('#tweets-container').prepend($tweet);
     }
   };
 
@@ -66,6 +67,7 @@ $(document).ready(function() {
     event.preventDefault();
     if (!formValidation("tweet-text")) return false;
     const formData = $(this).serialize();
+    $("#tweet-text").val('');
     $.post("/tweets", formData).then(loadTweets);
   });
 
