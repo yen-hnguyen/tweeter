@@ -4,21 +4,32 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
+// escape function to prevent "cross-site scripting"
+const escape = function(str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 $(document).ready(function() {
+  $(".error").hide();
+
+
   const createTweetElement = function(tweet) {
-    let tweetTime = timeago.format(tweet.created_at);
+    let tweetTime = timeago.format(escape(tweet.created_at));
     let $tweet = $(`
     <article class="tweet-container">
       <header class="tweet-header">
         <div class="user-info">
-          <img src=${tweet.user.avatars}/>
-          <p>${tweet.user.name}</p>
+          <img src=${escape(tweet.user.avatars)}/>
+          <p>${escape(tweet.user.name)}</p>
         </div>
         <p class="user-id">${tweet.user.handle}</p>
       </header>
       <!-- Tweet content -->
       <div class="tweet-content">
-        <p>${tweet.content.text}</p>
+        <p>${escape(tweet.content.text)}</p>
       </div>
       <!-- Timestamp and icons for tweet -->
       <footer class="tweet-footer">
@@ -53,11 +64,16 @@ $(document).ready(function() {
 
   const formValidation = function() {
     const $tweetContent = $("#tweet-text").val();
+    
+    $(".error").hide();
+
     if (!$tweetContent.length) {
-      alert("What are you thinking about?");
+      $(".error-message").text("Tweet cannot be empty");
+      $(".error").slideDown("slow").show();
       return false;
     } else if ($tweetContent.length > 140) {
-      alert("Too long!");
+      $(".error-message").text("Tweet is too long. Please keep it within 140 characters");
+      $(".error").slideDown("slow").show();
       return false;
     }
     return true;
@@ -68,6 +84,7 @@ $(document).ready(function() {
     if (!formValidation("tweet-text")) return false;
     const formData = $(this).serialize();
     $("#tweet-text").val('');
+    $(".counter").text(140);
     $.post("/tweets", formData).then(loadTweets);
   });
 
