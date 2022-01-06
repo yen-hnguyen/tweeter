@@ -3,6 +3,11 @@
   flex-direction: column;
 }
 
+.tweet-form label {
+  font-size: 25px;
+  font-weight: 600;
+}
+
 .tweet-form textarea {
   border: none;
   border-bottom: 5px solid #545149;

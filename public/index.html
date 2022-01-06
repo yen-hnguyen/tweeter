@@ -45,42 +45,41 @@
     </nav>
 
     <!-- User's name and avatar -->
-    <header class=user-profile>
-      <div class="image">
-        <img src="images/profile-hex.png">
-      </div>
-      <br>
-      <div>
-        <h2>Yen Nguyen</h2>
-      </div>
-    </header>
+    <div class="container">
+      <header class=user-profile>
+        <div class="image img-fluid">
+          <img src="images/profile-hex.png">
+        </div>
+        <br>
+        <div class="user-name"><strong>Yen</strong> Nguyen</div>
+      </header>
 
-    <!-- Tweeter page content  -->
-    <main class="main-container">
+      <!-- Tweeter page content  -->
+      <main class="main-container">
 
-      <section class="error">
-        <i class="fas fa-exclamation-circle"></i>
-        <p class="error-message"></p>
-        <i class="fas fa-exclamation-circle"></i>
-      </section>
+        <section class="error">
+          <i class="fas fa-exclamation-circle"></i>
+          <p class="error-message"></p>
+          <i class="fas fa-exclamation-circle"></i>
+        </section>
 
-      <!-- New Tweet Area -->
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form method="POST" action="/tweets" class="tweet-form">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
-          <div class="form-footer">
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-      </section>
+        <!-- New Tweet Area -->
+        <section class="new-tweet">
+          <form method="POST" action="/tweets" class="tweet-form">
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
+            <div class="form-footer">
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
 
-      <!-- User's posted tweet show up here -->
-      <section id="tweets-container">
-      </section>
-    </main>
+        <!-- User's posted tweet show up here -->
+        <section id="tweets-container">
+        </section>
+      </main>
+    </div>
   </body>
 
 </html>

@@ -18,7 +18,7 @@ html {
 body {
   color: #545149;
   background-color: #f4f1ec;
-  font-size: 24px;
+  font-size: 16px;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -26,10 +26,46 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-.main-container {
+.container {
   display: flex;
   flex-direction: column;
+  margin-top: 80px;
+  background-color: #f4f1ec;
+}
+
+
+.main-container {
   margin: auto;
   width: 90%;
-  background-color: #f4f1ec;
+}
+
+/* Mobile */
+/* @media screen and (max-width: 320px) {
+  nav {
+    background-color: #e7eaf6;
+  }
+
+} */
+
+/* Tablet */
+
+@media screen and (min-width: 1024px) {
+  nav {
+    background-color: #4056A1;
+  }
+
+  .container {
+    flex-direction: row;
+    margin-top: 120px;
+  }
+
+  .container .user-profile {
+    width: 35%;
+    margin: 100px 50px;
+  }
+
+  .container .main-container {
+    width: 65%;
+    margin: 100px 50px;
+  }
 }
