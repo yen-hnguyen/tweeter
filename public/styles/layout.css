@@ -39,14 +39,6 @@ body {
   width: 90%;
 }
 
-/* Mobile */
-/* @media screen and (max-width: 320px) {
-  nav {
-    background-color: #e7eaf6;
-  }
-
-} */
-
 /* Tablet */
 
 @media screen and (min-width: 1024px) {
