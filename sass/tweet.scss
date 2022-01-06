@@ -1,0 +1,51 @@
+@use 'layout';
+
+.tweet-container {
+  border: 4px solid #545149;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.tweet-container:hover {
+  box-shadow: 5px 5px 10px 2px #8997c4
+}
+
+.tweet-header {
+  @include layout.display-horizontal;
+  margin: 0 20px;
+}
+
+.user-info {
+  display: flex;
+}
+
+.user-info img {
+  padding-right: 10px;
+}
+
+.user-id {
+  opacity: 50%;
+}
+
+.tweet-content {
+  border-bottom: 4px solid #545149;
+  padding: 0 20px;
+  font-weight: 600;
+}
+
+.tweet-footer {
+  @include layout.display-horizontal;
+  align-items: center;
+  margin: 0 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.icons i {
+  padding: 5px;
+  color: layout.$primary-color;
+}
+
+.icons i:hover {
+  color: layout.$secondary-color;
+}

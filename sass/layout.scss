@@ -1,0 +1,91 @@
+$primary-color: #4056A1;
+$secondary-color: #a2792f;
+
+@mixin background-stack {
+  background-color: $secondary-color;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+}
+
+@mixin display-horizontal($flex-direction: row) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: space-between;
+}
+
+@mixin display-vertical($flex-direction: column) {
+  display: flex;
+  flex-direction: $flex-direction;
+  align-items: center;
+}
+
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Global layout stuff
+ */
+
+body {
+  color: #545149;
+  background-color: #f4f1ec;
+  font-size: 16px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+  background-color: #f4f1ec;
+}
+
+
+.main-container {
+  margin: auto;
+  width: 90%;
+}
+
+/* Mobile */
+/* @media screen and (max-width: 320px) {
+  nav {
+    background-color: #e7eaf6;
+  }
+
+} */
+
+/* Tablet */
+
+@media screen and (min-width: 1024px) {
+  nav {
+    background-color: $primary-color;
+  }
+
+  .container {
+    flex-direction: row;
+    margin-top: 120px;
+  }
+
+  .container .user-profile {
+    width: 35%;
+    margin: 100px 50px;
+  }
+
+  .container .main-container {
+    width: 65%;
+    margin: 100px 50px;
+  }
+}

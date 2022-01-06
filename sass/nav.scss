@@ -1,0 +1,31 @@
+@use 'layout';
+
+nav {
+  @include layout.display-horizontal;
+  @include layout.background-stack;
+  height: 100px;
+  width: 100%;
+  color: #FFFFFF;
+  padding: 0 1.5em;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+nav span {
+  font-family: 'Bungee', cursive;
+  font-size: 40px;
+}
+
+nav div {
+  @include layout.display-vertical;
+}
+
+@media screen and (min-width: 1024px) {
+  nav {
+    height: 120px;
+    background-color: layout.$primary-color;
+    background-image: none;
+  }
+}

@@ -1,0 +1,36 @@
+@use 'layout';
+
+.tweet-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.tweet-form label {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.tweet-form textarea {
+  border: none;
+  border-bottom: 5px solid #545149;
+  resize: none;
+  outline: none;
+  background-color: #f4f1ec;
+  font-size: 20px;
+  height: 80px;
+  padding-top: 10px
+}
+
+.form-footer {
+  @include layout.display-horizontal;
+  padding-top: 15px;
+  font-family: 'Bungee', cursive;
+}
+
+.form-footer button {
+  background-color: layout.$primary-color;
+  color: #FFFFFF;
+  font-size: 20px;
+  padding: 5px 10px;
+  border: none
+}

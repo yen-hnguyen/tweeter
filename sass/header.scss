@@ -1,0 +1,21 @@
+@use 'layout';
+
+.user-profile {
+  max-height: 350px;
+  width: 100%;
+  padding-top: 20px;
+  @include layout.display-vertical;
+  @include layout.background-stack;
+}
+
+.image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.user-profile .user-name {
+  margin: 0;
+  padding-bottom: 20px;
+  color: #FFFFFF;
+  font-size: 25px;
+}
