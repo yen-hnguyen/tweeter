@@ -34,3 +34,9 @@
   padding: 5px 10px;
   border: none
 }
+
+.form-footer button:hover {
+  font-size: 22px;
+  transition: 300ms;
+  cursor: pointer;
+}
