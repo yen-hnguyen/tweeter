@@ -46,7 +46,7 @@ $(document).ready(function() {
     return $tweet;
   };
 
-
+  // Function to render tweets to the tweets area
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {
       let $tweet = createTweetElement(tweet);
@@ -61,20 +61,29 @@ $(document).ready(function() {
   };
   loadTweets();
 
+  // Function to show and hide error
+  const errorDisplay = function() {
+    $(".error").slideDown("slow");
+
+    setTimeout(() => {
+      $(".error").slideUp("slow");
+    }, 3000);
+  };
+
+  // Function to validate the form
   const formValidation = function() {
     const $tweetContent = $("#tweet-text").val();
 
-    $(".error").hide();
-
     if (!$tweetContent.length) {
       $(".error-message").text("Tweet cannot be empty");
-      $(".error").slideDown("slow").show();
+      errorDisplay();
       return false;
     } else if ($tweetContent.length > 140) {
       $(".error-message").text("Tweet is too long. Please keep it within 140 characters");
-      $(".error").slideDown("slow").show();
+      errorDisplay();
       return false;
     }
+
     return true;
   };
 
@@ -86,6 +95,4 @@ $(document).ready(function() {
     $(".counter").text(140);
     $.post("/tweets", formData).then(loadTweets);
   });
-
-
 });
