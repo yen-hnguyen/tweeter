@@ -29,9 +29,12 @@ nav p {
   margin: 10px;
 }
 
+.compose-button {
+  color: red;
+}
+
 .compose-button:hover {
   height: 23px;
-  color: red;
   transition: 300ms;
   cursor: pointer;
 }
