@@ -39,6 +39,7 @@ $(document).ready(function() {
   `);
     return $tweet;
   };
+
   // Function to render each tweet to the site
   const renderTweet = function(tweet) {
     let $tweet = createTweetElement(tweet);
@@ -87,7 +88,6 @@ $(document).ready(function() {
       errorDisplay("Tweet is too long. Please keep it within 140 characters");
       return false;
     }
-
     return true;
   };
 
