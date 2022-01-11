@@ -45,12 +45,16 @@ $(document).ready(function() {
   `);
     return $tweet;
   };
+  // Function to render each tweet to the site
+  const renderTweet = function(tweet) {
+    let $tweet = createTweetElement(tweet);
+    $('#tweets-container').prepend($tweet);
+  };
 
-  // Function to render tweets to the tweets area
+  // Function to render tweets
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {
-      let $tweet = createTweetElement(tweet);
-      $('#tweets-container').prepend($tweet);
+      renderTweet(tweet);
     }
   };
 
@@ -60,6 +64,14 @@ $(document).ready(function() {
     });
   };
   loadTweets();
+
+  // Function to load new tweet from the database
+  const loadNewTweet = function() {
+    $.get("/tweets").then(function(data) {
+      let $newTweet = data[data.length - 1];
+      renderTweet($newTweet);
+    });
+  };
 
   // Function to show and hide error
   const errorDisplay = function(errorMsg) {
@@ -88,9 +100,10 @@ $(document).ready(function() {
   $(".tweet-form").submit(function(event) {
     event.preventDefault();
     if (!formValidation("tweet-text")) return false;
+
     const formData = $(this).serialize();
     $("#tweet-text").val('');
     $(".counter").text(140);
-    $.post("/tweets", formData).then(loadTweets);
+    $.post("/tweets", formData).then(loadNewTweet);
   });
 });
