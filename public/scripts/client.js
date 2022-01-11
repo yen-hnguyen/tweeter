@@ -13,19 +13,19 @@ $(document).ready(function() {
     let tweetTime = timeago.format(escape(tweet.created_at));
     let $tweet = $(`
     <article class="tweet-container">
-      <header class="tweet-header">
+      <div class="tweet-header">
         <div class="user-info">
           <img src=${escape(tweet.user.avatars)}/>
           <p>${escape(tweet.user.name)}</p>
         </div>
         <p class="user-id">${tweet.user.handle}</p>
-      </header>
+      </div>
       <!-- Tweet content -->
       <div class="tweet-content">
         <p>${escape(tweet.content.text)}</p>
       </div>
       <!-- Timestamp and icons for tweet -->
-      <footer class="tweet-footer">
+      <div class="tweet-footer">
         <div class="timestamp">
           <p>${tweetTime}</p>
         </div>
@@ -34,7 +34,7 @@ $(document).ready(function() {
           <i class="fas fa-retweet"></i>
           <i class="fas fa-heart"></i>
         </div>
-      </footer>
+      </div>
     </article>
   `);
     return $tweet;
