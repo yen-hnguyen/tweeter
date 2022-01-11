@@ -2,9 +2,19 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
+# Project Description
+
+The starter code was provided by Lighthouse Labs, and was completed by [Yen Nguyen](https://github.com/yen-hnguyen).
+
+Tweeter users can create new tweets of up to 140 characters. The design is responsive that adjust smootly to different screen sizes. This project was build using HTML, CSS, JS, jQuery, AJAX, Node and Express. 
 
 ## Final Product
+
+### Compose new tweets
+![Compose new tweets](public/images/new-tweet.gif)
+
+### Error display feature
+![Display errors](public/images/error-display.gif)
 
 ### Website on Mobile/Tablet device
 ![Mobile/Table View](public/images/mobile-tablet-view.png)
@@ -29,3 +39,4 @@ This repository is the starter code for the project: Students will fork and clon
 - chance
 - md5
 - nodemon
+- sass
