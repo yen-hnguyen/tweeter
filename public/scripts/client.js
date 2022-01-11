@@ -62,9 +62,9 @@ $(document).ready(function() {
   loadTweets();
 
   // Function to show and hide error
-  const errorDisplay = function() {
+  const errorDisplay = function(errorMsg) {
+    $(".error-message").text(errorMsg);
     $(".error").slideDown("slow");
-
     setTimeout(() => {
       $(".error").slideUp("slow");
     }, 3000);
@@ -75,12 +75,10 @@ $(document).ready(function() {
     const $tweetContent = $("#tweet-text").val();
 
     if (!$tweetContent.length) {
-      $(".error-message").text("Tweet cannot be empty");
-      errorDisplay();
+      errorDisplay("Tweet cannot be empty");
       return false;
     } else if ($tweetContent.length > 140) {
-      $(".error-message").text("Tweet is too long. Please keep it within 140 characters");
-      errorDisplay();
+      errorDisplay("Tweet is too long. Please keep it within 140 characters");
       return false;
     }
 
