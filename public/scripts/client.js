@@ -84,7 +84,8 @@ $(document).ready(function() {
     if (!$tweetContent.length) {
       errorDisplay("Tweet cannot be empty");
       return false;
-    } else if ($tweetContent.length > 140) {
+    }
+    if ($tweetContent.length > 140) {
       errorDisplay("Tweet is too long. Please keep it within 140 characters");
       return false;
     }
